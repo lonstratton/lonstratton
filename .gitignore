@@ -1,0 +1,6 @@
+# Media files (hosted externally)
+music/
+video/
+
+# macOS junk
+.DS_Store
