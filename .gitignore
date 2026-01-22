@@ -2,5 +2,9 @@
 music/
 video/
 
-# macOS junk
+# macOS
 .DS_Store
+
+# BBEdit
+*.bbprojectd/
+*.bbproject/
