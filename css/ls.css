@@ -50,6 +50,8 @@ body {
 	margin: 0;
 	font-size: 13px;
 	line-height: 1.6;
+	width: 100%;
+	background: #ffffff;
 }
 a {
 	color: #0078CF;
@@ -222,10 +224,6 @@ h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 }
 /* -- GRID  https://github.com/mattberridge/Proportional-Grids/
 ------------------------------------------------------------- */
-body {
-	width:100%;
-	background: #ffffff;
-}
 .container {
 	width: 90%;
 	margin: 5em auto;
@@ -449,13 +447,44 @@ nav a, menu a {
 	color: #555;
 }
 .navactive {
-	color: #0078CF
+	color: #0078CF;
+	font-weight: 700;
+	text-transform: uppercase;
 }
 .logo {
 	margin-bottom: 0.3em;
 }
 .logo:hover {
 	background: none;
+}
+.mq2-only { display: none; }
+.mq2-none { display: block; }
+.mq3-only { display: none; }
+.mq3-none { display: block; }
+
+#nav-toggle {
+	display: none;
+	border: none;
+	background: transparent;
+	padding: 0.25em;
+	cursor: pointer;
+}
+
+.nav-toggle-icon {
+	display: block;
+	width: 18px;
+	height: 2px;
+	border-radius: 2px;
+	background: #555;
+	margin: 3px 0;
+}
+
+.nav-toggle-label {
+	display: none;
+}
+
+#mobile-nav {
+	display: none;
 }
 /* -- GENERAL 
 ------------------------------------------------------------- */
@@ -731,7 +760,74 @@ border-right: 1px solid #DDD;
 	.mq2-col-two-thirds { width: 66.666%; }
 	.mq2-col-one-quarter { width: 25%; }
 	.mq2-col-three-quarters { width: 75%; }
+	.mq2-only { display: inline-block; }
+	.mq2-none { display: none; }
 
+	header#navtop {
+		position: relative;
+		overflow: visible;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+
+	header#navtop::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+	#nav-toggle.mq2-only {
+		display: inline-flex;
+		position: absolute;
+		top: 0.5em;
+		right: 0;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	body.nav-open #mobile-nav {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 2rem;
+		background: rgba(255, 255, 255, 0.85);
+		-webkit-backdrop-filter: blur(3px);
+		backdrop-filter: blur(3px);
+		padding: 0.4em 0.9em;
+		border-radius: 3px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+		z-index: 200;
+		width: auto;
+		min-width: 8rem;
+	}
+	#mobile-nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.1em;
+	}
+
+	#mobile-nav li {
+		border: 0;
+	}
+
+	#mobile-nav a {
+		display: block;
+		padding: 0.25em 0;
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: #222;
+		text-decoration: none;
+	}
+
+	#mobile-nav a:hover {
+		background: none;
+		color: #0078CF;
+		text-decoration: underline;
+	}
 	header nav { 
 	width: 100%; 
 	}
@@ -832,6 +928,24 @@ border-right: 1px solid #DDD;
   }
   header nav ul {
     border-left-color: rgba(255, 255, 255, 0.3);
+  }
+  #nav-toggle {
+    background: transparent;
+  }
+  body.nav-open #mobile-nav {
+    background: rgba(30, 34, 38, 0.85);   /* lighter */
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  }
+  .nav-toggle-icon {
+    background: #b8bcc0;
+  }
+  #mobile-nav a {
+    color: #d6d6d6;
+  }
+  #mobile-nav a:hover {
+    color: #0078CF;
   }
   .works figure > a {
     border-top-color: rgba(255, 255, 255, 0.12);
