@@ -129,8 +129,6 @@ applyHoverEffect('.zoom');
 applyHoverEffect('.play');
 
 });
-// END
-
 /* ====================================================
    MOBILE HAMBURGER MENU (mq2)
    ==================================================== */
