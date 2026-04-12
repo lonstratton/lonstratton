@@ -769,6 +769,43 @@ iframe {border:none;}
 .tab_container > article:first-child {
   display: block;
 }
+
+/* -------------------------------------------------------------
+======  ARCHIVE
+------------------------------------------------------------- */
+.archive-links {
+  margin-top: 1em;
+}
+.archive-links .other-galleries-grid {
+  display: flex;
+  justify-content: left;
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+.archive-links .other-galleries-grid .grid {
+  float: none;
+  padding-left: 0;
+  width: auto;
+  flex: 0 0 auto;
+}
+.archive-links .other-galleries-grid img {
+  width: clamp(80px, 12vw, 100px);
+  height: auto;
+  display: block;
+}
+.archive-links figcaption {
+  margin-top: 0.3em;
+  font-size: 0.75em;
+  text-align: center;
+  opacity: 0.7;
+}
+.archive-links img {
+  transition: opacity 0.2s ease;
+}
+.archive-links a:hover img {
+  opacity: .75;
+}
 /* -------------------------------------------------------------
 ======  MEDIA QUERIES
 ------------------------------------------------------------- */
@@ -894,8 +931,11 @@ border-right: 1px solid #DDD;
   padding: 0 1em;
   border-left:1px solid #ddd;
   }
+  .other-galleries-grid .grid {
+    flex: 0 0 100%;
+  }
   footer ul {line-height: 1.7em;}
- }
+  }
 /* -- Media query 3 (mq3)
 ------------------------------------------------------------- */
 @media only screen and (max-width: 480px) {
