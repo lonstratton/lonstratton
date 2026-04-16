@@ -865,25 +865,7 @@ iframe {border:none;}
 
 /* -- Media query 1 (mq1)
 ------------------------------------------------------------- */
-@media only screen and (max-width: 60em) { /* 16 / 960 */
- .mq1-col-full {
-width: 100%;
-}
- .mq1-col-one-half {
-width: 50%;
-}
- .mq1-col-one-third {
-width: 33.333%;
-}
- .mq1-col-two-thirds {
-width: 66.666%;
-}
- .mq1-col-one-quarter {
-width: 25%;
-}
- .mq1-col-three-quarters {
-width: 75%;
-}
+@media only screen and (max-width: 960px) {
  h1 {
 font-size: 3.1em;
 }
