@@ -584,42 +584,108 @@ nav a, menu a {
 }
 /* -- FOOTER
 ------------------------------------------------------------- */
-footer {
+.site-footer {
   color: #555;
   margin-bottom: 7em;
 }
-footer p
-{
-  display: block;
-  text-align: center;
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5em;
 }
-footer nav ul {
-  float: right;
-  overflow: hidden;
+.footer-nav,
+.footer-top,
+.footer-icons {
+  flex: 1 1 0;
 }
-footer a
-{ 
-  color: #999;
-  font-weight: 500;
+.footer-nav ul,
+.footer-icons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-footer a:hover { text-decoration: none; }
-footer a img:hover {
-  opacity: 0.4;
+.footer-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0;
 }
-footer li {
-  float: left;
-  margin-right: 1em;
-  padding-right: 1em;
-  border-right: 1px solid #DDD;
+.footer-nav li {
+  margin: 0;
+  padding: 0;
+  border: 0;
   font-size: 0.9em;
 }
-footer li:last-child {
-  margin-right: 0;
-  padding-right: 0;
-  border-right: none;
+.footer-nav a {
+  color: #999;
+  font-weight: 500;
+  text-decoration: none;
 }
-.top-of-page {
+.footer-nav a:hover {
+  text-decoration: none;
+  color: #000;
+}
+.footer-top {
   text-align: center;
+}
+.footer-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5em;
+}
+.footer-icons li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.footer-icons img {
+  display: block;
+  height: 1.1rem;
+  width: auto;
+}
+.footer-bottom {
+  margin-top: 1.5em;
+}
+.footer-bottom p {
+  margin: 0;
+  text-align: center;
+  font-size: 0.85em;
+}
+.footer-bottom a {
+  color: #aaa;
+  font-weight: 500;
+}
+.footer-bottom a:hover {
+  text-decoration: none;
+  color: #000;
+}
+.footer-primary,
+.footer-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-primary {
+  gap: 0;
+}
+.footer-primary li + li::before {
+  content: "|";
+  color: #ccc;
+  margin: 0 0.7em;
+}
+.footer-secondary {
+  margin-top: 0.4em;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+.footer-secondary li + li::before {
+  content: "|";
+  color: #ccc;
+  margin: 0 0.7em;
 }
 .top-button { /* Button Styling */
   display: inline-block;
@@ -863,19 +929,6 @@ iframe {border:none;}
 ======  MEDIA QUERIES
 ------------------------------------------------------------- */
 
-/* -- Media query 1 (mq1)
-------------------------------------------------------------- */
-@media only screen and (max-width: 960px) {
- h1 {
-font-size: 3.1em;
-}
- footer li {
-float: left;
-margin-right: 0.5em;
-padding-right: 0.5em;
-border-right: 1px solid #DDD;
-}
-}
 /* -- Media query 2 (mq2)
 ------------------------------------------------------------- */
 @media only screen and (max-width: 820px) {
@@ -972,7 +1025,30 @@ border-right: 1px solid #DDD;
   .archive-links .other-galleries-grid .grid {
   flex: 0 0 auto;
   }
-  footer ul {line-height: 1.7em;}
+  .footer-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2em;
+  }
+  .footer-top {
+    order: -1;
+  }
+  .footer-nav,
+  .footer-top,
+  .footer-icons {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-nav ul {
+    justify-content: center;
+  }
+  .footer-icons {
+    justify-content: center;
+  }
+  .divide-top {
+    padding-top: .8em;
+  }
   }
 /* -- Media query 3 (mq3)
 ------------------------------------------------------------- */
@@ -992,30 +1068,6 @@ border-right: 1px solid #DDD;
   
   /**/
   header nav ul li { padding: 0 0.5em; }
-  
-  .mobile
-  {
-  letter-spacing: .05em;
-  font-weight: 700;
-  font-size: 1.2em;
-  line-height: 1.8em;
-  } 
-  footer img
-  {
-  height:3em;
-  margin-top: 1em;
-  margin-bottom: 1.5em;
-  padding-left: 2em;
-  } 
-  footer li
-  {
-  float: none;
-  margin-top: -0.5em;
-  margin-right: 0em;
-  padding-right: 0em;
-  border-right: none;
-  line-height: 2.5em;
-  }
   .top-button {
     font-size: 1.5em;
   }
@@ -1134,10 +1186,6 @@ body.dark-mode blockquote,
 body.dark-mode .services aside,
 body.dark-mode .services aside:after,
 body.dark-mode .services h5:after,
-body.dark-mode footer li {
-  border-color: rgba(255,255,255,0.12);
-}
-
 body.dark-mode footer {
   color: #9aa0a6;
 }
