@@ -627,6 +627,11 @@ nav a, menu a {
   color: #000;
 }
 .footer-top {
+  flex: 0 0 auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 .footer-icons {
@@ -677,32 +682,40 @@ nav a, menu a {
   color: #ccc;
   margin: 0 0.7em;
 }
+.footer-label {
+  font-size: 0.7em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #999;
+  font-weight: 700;
+  opacity: 0.7;
+}
 .footer-secondary {
   margin-top: 0.4em;
   font-size: 0.75em;
   opacity: 0.7;
 }
-.footer-secondary li + li::before {
+.footer-secondary .footer-label + li {
+  margin-left: 1.5em;
+}
+.footer-secondary li:not(.footer-label) + li::before {
   content: "|";
   color: #ccc;
   margin: 0 0.7em;
 }
-.top-button { /* Button Styling */
-  display: inline-block;
-  color: #4e7b94;
+.top-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.2em;
-  padding: .2em;
-  border: none;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
 }
 .top-button::before {
   content: "\2191";
   font-family: system-ui, -apple-system, sans-serif;
   display: inline-block;
-}
-.footer-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .footer-toggle {
   display: inline-block;
@@ -719,8 +732,8 @@ nav a, menu a {
 /* desktop / mouse hover only */
 @media (hover: hover) and (pointer: fine) {
 .top-button:hover {
-  color: #fff;
-  background: #aeaeae;
+  color: #000;
+  background: #eee;
 }
 }
 .top-button:active {
@@ -952,7 +965,7 @@ iframe {border:none;}
 .archive-links .other-galleries-grid .grid {
   float: none;
   flex: 0 0 auto;
-  width: clamp(80px, 12vw, 120px);
+  width: clamp(60px, 12vw, 100px);
   padding-left: 0;
 }
 .archive-links .other-galleries-grid figure {
