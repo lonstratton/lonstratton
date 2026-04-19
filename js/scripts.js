@@ -47,7 +47,7 @@ $(document).ready(function () {
 
     var locationPath = filterPath(location.pathname);
     var scrollElem = scrollableElement('html', 'body');
-    $('a[href*="#navtop"]').each(function () {
+    $('a[href*="#top"]').each(function () {
         var thisPath = filterPath(this.pathname) || locationPath;
         if (locationPath == thisPath && (location.hostname == this.hostname || !this.hostname) && this.hash.replace(/#/, '')) {
             var $target = $(this.hash),
