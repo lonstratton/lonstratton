@@ -287,6 +287,45 @@ h6 a:hover {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+/* Shorts page: mixed portrait and landscape images */
+.short-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 3em;
+  row-gap: 2em;
+  margin-left: 0;
+  overflow: visible;
+}
+.short-grid::before,
+.short-grid::after {
+  content: none;
+  display: none;
+}
+.short-grid figure {
+  float: none;
+  width: auto;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.short-grid figure > a {
+  height: auto;
+}
+.short-grid figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* Desktop: first row 4, second row 3, following rows 4 */
+@media only screen and (min-width: 821px) {
+  .short-grid figure {
+    grid-column: span 3;
+  }
+  .short-grid figure:nth-child(5),
+  .short-grid figure:nth-child(6),
+  .short-grid figure:nth-child(7) {
+    grid-column: span 4;
+  }
+}
 .half-gutter {
   margin-left: -1.5em;
 }
@@ -763,7 +802,6 @@ menu a {
 ------------------------------------------------------------- */
 .works figure > a {
   display: block;
-  height: 100%;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -1113,13 +1151,8 @@ menu a {
     padding: 0 1em;
     border-left: 1px solid #ddd;
   }
-  .works {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: flex-start;
-  }
-  .works figure.grid {
-	float: none;
+  .short-grid {
+	grid-template-columns: repeat(2, minmax(0, 2fr));
   }
   .works figure figcaption {
     white-space: normal;
@@ -1223,7 +1256,9 @@ menu a {
   h1 {
     padding: 0 0 0 0.1em;
   }
-
+  .short-grid {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   /**/
   header nav ul li {
     padding: 0 0.5em;
