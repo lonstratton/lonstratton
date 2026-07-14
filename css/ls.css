@@ -311,6 +311,9 @@ h6 a:hover {
 .col-three-quarters {
   width: 75%;
 }
+.col-one-fifth {
+  width: 20%;
+}
 .divide-top {
   border-top: 1px solid #ccc;
   padding-top: 2em;
@@ -803,6 +806,13 @@ menu a {
 .works figure figcaption p {
   margin: 0;
 }
+.figcaption-sub {
+  font-size: 0.5rem;
+  display: inline;
+  color: #616161;
+  letter-spacing: 0.02em;
+  padding-left: .5em;
+}
 .works figure {
   margin-bottom: 2em;
 }
@@ -1102,6 +1112,24 @@ menu a {
     float: left;
     padding: 0 1em;
     border-left: 1px solid #ddd;
+  }
+  .works {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+  }
+  .works figure.grid {
+	float: none;
+  }
+  .works figure figcaption {
+    white-space: normal;
+    font-size: .9em;
+    font-weight: 600;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+  }
+  .works figure figcaption a {
+    line-height: 1.35;
   }
   .other-galleries-grid .grid {
     flex: 0 0 100%;
