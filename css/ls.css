@@ -287,7 +287,9 @@ h6 a:hover {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* Shorts page: mixed portrait and landscape images */
+/* -------------------------------------------------------------
+ ======  Shorts page: mixed portrait and landscape images 
+ -------------------------------------------------------------*/
 .short-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1522,7 +1524,7 @@ body.dark-mode .tab_container {
   
   body:not(.light-mode) .divide-top,
   body:not(.light-mode) .footer-bottom hr {
-	border-color: rgba(255, 255, 255, 0.05);
+	border-color: rgba(255, 255, 255, 0.1);
   }
 
   body:not(.light-mode) footer {
