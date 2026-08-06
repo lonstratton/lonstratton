@@ -800,6 +800,35 @@ menu a {
   position: relative;
   top: 2px;
 }
+/* -- HOME PAGE
+------------------------------------------------------------- */
+.portfolio-label {
+  margin: 0 0 1em;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #999;
+  line-height: 1;
+}
+.portfolio-label a {
+  color: inherit;
+  text-decoration: none;
+}
+.portfolio-label a:hover,
+.portfolio-label a:focus {
+  font-weight: 700;
+  text-decoration: none;
+  background: none;
+}
+.portfolio-items {
+  --gap: 1.5em;
+  display: flex;
+  gap: var(--gap);
+}
+.portfolio-items figure {
+    flex: 1;
+}
 /* -- WORKS
 ------------------------------------------------------------- */
 .works figure > a {
@@ -833,25 +862,23 @@ menu a {
   background: url(../img/play.png) no-repeat center;
 }
 .works figure figcaption {
-  margin-top: 0.1em;
+  margin-top: 0.2em;
   margin-bottom: 1em;
   padding: 0 0.5em;
   white-space: nowrap;
 }
 .works figure figcaption a {
-  line-height: 2em;
+  line-height: 1.5em;
   color: #555;
-  font-weight: 700;
 }
 .works figure figcaption p {
   margin: 0;
 }
 .figcaption-sub {
   font-size: 0.5rem;
-  display: inline;
+  display: block;
   color: #616161;
   letter-spacing: 0.02em;
-  padding-left: .5em;
 }
 .works figure {
   margin-bottom: 2em;
@@ -1156,6 +1183,12 @@ menu a {
   .short-grid {
 	grid-template-columns: repeat(2, minmax(0, 2fr));
   }
+  .portfolio-items {
+	flex-wrap: wrap;
+	}
+  .portfolio-items figure {
+	flex: 0 0 calc(50% - (var(--gap) / 2));
+  }
   .works figure figcaption {
     white-space: normal;
     font-size: .9em;
@@ -1260,6 +1293,16 @@ menu a {
   }
   .short-grid {
 	grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .portfolio-group {
+	margin-bottom: 2.5rem;
+  }
+  .portfolio-label {
+	font-size: .9em;
+  }	
+  .portfolio-items figure {
+	flex: 0 0 100%;
+	margin-bottom: 0;
   }
   /**/
   header nav ul li {
@@ -1368,6 +1411,10 @@ body.dark-mode #mobile-nav .theme-toggle-item {
 
 body.dark-mode .external-link::after {
   background-image: url("../img/exlink-dark.png");
+}
+
+body.dark-mode .portfolio-label {
+  color: #888;
 }
 
 body.dark-mode .works figure > a {
@@ -1504,6 +1551,10 @@ body.dark-mode .tab_container {
 
   body:not(.light-mode) .external-link::after {
     background-image: url("../img/exlink-dark.png");
+  }
+
+  body:not(.light-mode) .portfolio-label {
+    color: #888;
   }
 
   body:not(.light-mode) .works figure > a {
