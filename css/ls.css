@@ -317,6 +317,40 @@ h6 a:hover {
   width: 100%;
   height: auto;
 }
+.short-grid-small {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+    margin-top: 4em;
+}
+.short-grid-small figure {
+    flex: 0 1 240px;
+    max-width: 240px;
+    margin: 0;
+}
+.short-heading {
+  grid-column: 1 / -1;
+  font-size: .75em;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: -1em;
+}
+.short-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  margin: 2em 0;
+}
+.short-section figure {
+    margin: 0;
+    max-width: none;
+}
+.short-section .short-heading {
+    color: #b22222;
+}
 /* Desktop: first row 4, second row 3, following rows 4 */
 @media only screen and (min-width: 821px) {
   .short-grid figure {
@@ -1216,6 +1250,14 @@ menu a {
   .works figure figcaption a {
     line-height: 1.35;
   }
+  .short-section {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    column-gap: 2em;
+    row-gap: 2em;
+  }
+  .short-section figure {
+    grid-column: auto;
+  }
   .other-galleries-grid .grid {
     flex: 0 0 100%;
   }
@@ -1310,6 +1352,17 @@ menu a {
   }
   .short-grid {
 	grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .short-grid-small {
+	gap: 1em;
+  }
+  .short-grid-small figure {
+	flex-basis: 46%;
+	max-width: 46%;
+  }
+  .short-section {
+    grid-template-columns: 1fr;
+    row-gap: 1.5em;
   }
   .portfolio-group {
 	margin-bottom: 2.5rem;
