@@ -853,11 +853,9 @@ menu a {
   /* optional: control icon size */
   /* background-size: 48px 48px; */
 }
-
 .works figure .zoom {
   background: url(../img/zoom.png) no-repeat center;
 }
-
 .works figure .play {
   background: url(../img/play.png) no-repeat center;
 }
@@ -874,11 +872,30 @@ menu a {
 .works figure figcaption p {
   margin: 0;
 }
-.figcaption-sub {
+.figcaption-sub,
+.figcaption-sub-imdb {
   font-size: 0.5rem;
   display: block;
   color: #616161;
   letter-spacing: 0.02em;
+}
+.figcaption-sub {
+  margin-top: -.2em;
+}
+.figcaption-sub-imdb {
+  margin-top: -.5em;
+}
+.film-title {
+  display: inline;
+}
+.imdb-link {
+  margin-left: .3em;
+}
+.imdb-link img {
+  width: 1.9em;
+  height: auto;
+  position: relative;
+  top: -.1em;
 }
 .works figure {
   margin-bottom: 2em;
@@ -1426,6 +1443,10 @@ body.dark-mode .works figure figcaption a {
   color: #a8acb0;
 }
 
+body.dark-mode .imdb-link img {
+  content: url("../img/imdb-dark.svg");
+}
+
 body.dark-mode hr,
 body.dark-mode .divide-top,
 body.dark-mode blockquote,
@@ -1564,6 +1585,10 @@ body.dark-mode .tab_container {
   body:not(.light-mode) .works figure figcaption,
   body:not(.light-mode) .works figure figcaption a {
     color: #a8acb0;
+  }
+  
+  body:not(.light-mode) .imdb-link img {
+	content: url("../img/imdb-dark.svg");
   }
 
   body:not(.light-mode) hr,
