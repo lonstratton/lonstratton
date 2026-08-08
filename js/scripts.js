@@ -125,7 +125,7 @@ function applyHoverEffect(className) {
   );
 }
 
-applyHoverEffect('.zoom');
+applyHoverEffect('.link');
 applyHoverEffect('.play');
 
 });

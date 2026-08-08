@@ -878,7 +878,7 @@ menu a {
   border-top: 1px solid #ddd;
   padding-top: 1em;
 }
-.works figure .zoom,
+.works figure .link,
 .works figure .play {
   position: absolute;
   top: 10px;
@@ -892,8 +892,8 @@ menu a {
   /* optional: control icon size */
   /* background-size: 48px 48px; */
 }
-.works figure .zoom {
-  background: url(../img/zoom.png) no-repeat center;
+.works figure .link {
+  background: url(../img/link.png) no-repeat center;
 }
 .works figure .play {
   background: url(../img/play.png) no-repeat center;
