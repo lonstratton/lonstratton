@@ -884,7 +884,7 @@ menu a {
 .short-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  column-gap: 3em;
+  column-gap: 2em;
   row-gap: 2em;
   margin-left: 0;
   overflow: visible;
@@ -922,7 +922,7 @@ menu a {
 }
 .short-heading {
   grid-column: 1 / -1;
-  font-size: .75em;
+  font-size: .85em;
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -938,6 +938,9 @@ menu a {
 .short-section figure {
     margin: 0;
     max-width: none;
+}
+.short-section figure > a {
+  border-top-color: rgb(178 34 34 / 50%);
 }
 .short-section .short-heading {
     color: #b22222;
@@ -1226,7 +1229,8 @@ menu a {
     border-left: 1px solid #ddd;
   }
   .short-grid {
-	grid-template-columns: repeat(2, minmax(0, 2fr));
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	column-gap: 1.5em;
   }
   .portfolio-items {
 	flex-wrap: wrap;
@@ -1485,6 +1489,10 @@ body.dark-mode .works figure > a {
   border-top-color: rgba(255, 255, 255, 0.12);
 }
 
+body.dark-mode .short-section figure > a {
+  border-top-color: rgb(178 34 34 / 50%);
+}
+
 body.dark-mode .works figure figcaption,
 body.dark-mode .works figure figcaption a {
   color: #a8acb0;
@@ -1627,6 +1635,10 @@ body.dark-mode .tab_container {
 
   body:not(.light-mode) .works figure > a {
     border-top-color: rgba(255, 255, 255, 0.12);
+  }
+  
+  body:not(.light-mode) .short-section figure > a {
+  border-top-color: rgb(178 34 34 / 50%);
   }
 
   body:not(.light-mode) .works figure figcaption,
